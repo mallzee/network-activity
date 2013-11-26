@@ -1,18 +1,15 @@
-define(function(){
+var exec = require('cordova/exec');
 
-	'use strict';
+var NetworkActivity = function(){
+	this.serviceName = "NetworkActivity";
+};
 
-	var _cordova = window.cordova;
-	return {
+NetworkActivity.prototype.activityStart = function() {
+	exec(null, null, "NetworkActivity", "activityStart", []);
+};
 
-		activityStart:function() {
-			_cordova.exec(null, null, "NetworkActivity", "activityStart", []);
-		},
+NetworkActivity.prototype.activityStop = function() {
+	exec(null, null, "NetworkActivity", "activityStop", []);
+};
 
-		activityStop:function() {
-			_cordova.exec(null, null, "NetworkActivity", "activityStop", []);
-		}
-
-	};
-
-});
+module.exports = new NetworkActivity();
