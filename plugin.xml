@@ -16,7 +16,8 @@
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="NetworkActivity">
-                <param name="ios-package" value="NetworkActivity"/>
+                <param name="ios-package" value="NetworkActivity" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
